@@ -1,4 +1,5 @@
-# class Chord < ActiveRecord::Base
+class Chord < ActiveRecord::Base
 
+	validates :name, :presence => true
 
-# end
+end
