@@ -6,7 +6,7 @@ match('notes', {:via => :post, :to => 'notes#create'})
 match('notes/:id', {:via => :get, :to => 'notes#show'})
 match('notes/:id/edit', {:via => :get, :to => 'notes#edit'})
 match('notes/:id', {:via => [:patch, :put], :to => 'notes#update'})
-# match('notes/:id', {:via => :delete, :to => 'notes#destroy'})
+match('notes/:id', {:via => :delete, :to => 'notes#destroy'})
 
 # match('chords', {:via => :get, :to => 'chords#index'})
 # match('chords/new', {:via => :get, :to => 'chords#new'})

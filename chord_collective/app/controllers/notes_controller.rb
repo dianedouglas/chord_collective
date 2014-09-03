@@ -40,7 +40,10 @@ class NotesController < ApplicationController
   end
 
   def destroy
-
+    @note = Note.find(params[:id])
+    @note.destroy
+    flash[:notice] = "Note removed."
+    redirect_to('/notes')
   end
 
 end

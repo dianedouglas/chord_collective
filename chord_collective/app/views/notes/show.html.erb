@@ -1,3 +1,4 @@
 <h1>Note: <%=@note.name%></h1>
 
-<a href="/notes/<%=@note.id%>/edit">Edit</a>
+<p><a href="/notes/<%=@note.id%>/edit">Edit</a> |
+<a href="/notes/<%=@note.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete</a></p>
