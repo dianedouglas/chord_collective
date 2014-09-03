@@ -2,7 +2,7 @@
 
 <%= render('layouts/errors', :object => @note) %>
 
-<form action="/notes/<%= @note.id %>" method="post">
+<form action="/notes/<%=@note.id%>" method="post">
   <input name="_method" type="hidden" value="patch">
   <%= render('form') %>
   <button>Update Note</button>
