@@ -1,0 +1,8 @@
+<h1>Update Chord</h1>
+
+<%= render('layouts/errors', :object => @chord) %>
+
+<form action="/chords/<%=@chord.id%>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <%= render('form', :button_message => "Update Chord") %>
+</form>

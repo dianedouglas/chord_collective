@@ -1,0 +1,11 @@
+<h1>Here are all the chords you have to choose from.</h1>
+
+<ul>
+	<% @chords.each do |chord| %>
+		<li>
+			<a href="chords/<%=chord.id%>"><%=chord.name%></a>
+		</li>
+	<% end %>
+</ul>
+
+<a href="/chords/new">New Chord</a>
