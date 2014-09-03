@@ -33,6 +33,7 @@ class NotesController < ApplicationController
   def update
     @note = Note.find(params[:id])
     if @note.update(params[:note])
+      flash[:notice] = "Successfully updated #{@note.name}!"
       redirect_to('/notes')
     else
       render('notes/edit.html.erb')
