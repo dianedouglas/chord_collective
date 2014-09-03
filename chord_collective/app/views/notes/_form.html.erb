@@ -1,10 +1,32 @@
 <div class="form-group">
   <label for="note_name">Name</label>
-  <select id="note_name" class="form-control" name="note[name]" value="<%= @note.name %>">
+  <select id="note_name" class="form-control" name="note[name]">
     <% ("A".."G").each_with_index do |letter, i| %>
-      <option value="<%=letter%>"><%=letter%></option>
+      <% if letter == @note.name %>
+        <option value="<%=letter%>" selected><%=letter%></option>
+      <% else %>
+        <option value="<%=letter%>" ><%=letter%></option>
+      <% end %>
+
       <% if i < 6 && letter != "B" && letter != "E" %>
-        <option value="<%=letter%>#/<%=("A".."G").to_a[i+1]%>b" ><%=letter%>#/<%=("A".."G").to_a[i+1]%>b</option>
+        <% current_black_note = letter + "#/" + ('A'..'G').to_a[i+1] + "b" %>
+        <% if @note.name == current_black_note %>
+          <option value="<%=current_black_note%>" selected><%=letter%>#/<%=("A".."G").to_a[i+1]%>b</option>
+        <% else %>
+          <option value="<%=current_black_note%>"><%=letter%>#/<%=("A".."G").to_a[i+1]%>b</option>
+        <% end %>
+      <% end %>
+    <% end %>
+  </select>
+</div>
+<div class="form-group">
+  <label for="octave">Octave</label>
+  <select id="octave" class="form-control" name="note[octave]">
+    <% 0.upto(10) do |index|%>
+      <% if index == @note.octave %>
+        <option value="<%=index%>" selected><%=index%></option>
+      <% else %>
+        <option value="<%=index%>"><%=index%></option>
       <% end %>
     <% end %>
   </select>
