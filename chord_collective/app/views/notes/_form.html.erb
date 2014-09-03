@@ -1,5 +1,12 @@
 <div class="form-group">
   <label for="note_name">Name</label>
-  <input id="note_name" class="form-control" name="note[name]" type="text" value="<%= @note.name %>">
+  <select id="note_name" class="form-control" name="note[name]" value="<%= @note.name %>">
+    <% ("A".."G").each_with_index do |letter, i| %>
+      <option value="<%=letter%>"><%=letter%></option>
+      <% if i < 6 && letter != "B" && letter != "E" %>
+        <option value="<%=letter%>#/<%=("A".."G").to_a[i+1]%>b" ><%=letter%>#/<%=("A".."G").to_a[i+1]%>b</option>
+      <% end %>
+    <% end %>
+  </select>
 </div>
   <button class="btn btn-primary"><%=button_message%></button>
