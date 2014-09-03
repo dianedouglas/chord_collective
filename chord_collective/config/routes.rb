@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 match('notes', {:via => :get, :to => 'notes#index'})
-# match('notes/new', {:via => :get, :to => 'notes#new'})
-# match('notes', {:via => :post, :to => 'notes#create'})
-# match('notes/:id', {:via => :get, :to => 'notes#show'})
+match('notes/new', {:via => :get, :to => 'notes#new'})
+match('notes', {:via => :post, :to => 'notes#create'})
+match('notes/:id', {:via => :get, :to => 'notes#show'})
 # match('notes/:id/edit', {:via => :get, :to => 'notes#edit'})
 # match('notes/:id', {:via => [:patch, :put], :to => 'notes#update'})
 # match('notes/:id', {:via => :delete, :to => 'notes#destroy'})
