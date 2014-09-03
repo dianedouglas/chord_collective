@@ -4,6 +4,5 @@
 
 <form action="/notes/<%=@note.id%>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <%= render('form') %>
-  <button class="btn btn-primary">Update Note</button>
+  <%= render('form', :button_message => "Update Note") %>
 </form>

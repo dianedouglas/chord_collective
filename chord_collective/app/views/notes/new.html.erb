@@ -3,6 +3,5 @@
 <%= render('layouts/errors', :object => @note) %>
 
 <form action="/notes" method="post">
-  <%= render('form') %>
-  <button class="btn btn-primary">Create Note</button>
+  <%= render('form', :button_message => "Create Note") %>
 </form>
