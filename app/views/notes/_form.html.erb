@@ -1,5 +1,9 @@
 <div class="form-group">
-  <label for="note_name">Name</label>
+  <label for="note_identifier">Name</label>
+  <input id="note_identifier" class="form-control" name="note[identifier]" type="text" value="<%= @note.identifier %>">
+</div>
+<div class="form-group">
+  <label for="note_name">Note</label>
   <select id="note_name" class="form-control" name="note[name]">
     <% ("A".."G").each_with_index do |letter, i| %>
 
@@ -31,5 +35,13 @@
       <% end %>
     <% end %>
   </select>
+</div>
+<div class="form-group">
+  <label for="note_instrument">Instrument</label>
+  <input id="note_instrument" class="form-control" name="note[instrument]" type="text" value="<%= @note.instrument %>">
+</div>
+<div class="form-group">
+  <label for="note_loudness">Loudness: A number between 0-127</label>
+  <input id="note_loudness" class="form-control" name="note[loudness]" type="number" max=127 min=0 value="<%= @note.loudness %>">
 </div>
   <button class="btn btn-primary"><%=button_message%></button>
