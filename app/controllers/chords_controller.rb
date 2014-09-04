@@ -18,6 +18,8 @@ class ChordsController < ApplicationController
     else
       render('chords/new.html.erb')
     end
+    @note = Note.find(params[:note][:note_id])
+    @chord.notes << @note
   end
 
   def show

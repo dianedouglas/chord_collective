@@ -1,4 +1,13 @@
 <h1>Chord: <%=@chord.name%></h1>
 
+<h4>Notes:</h4>
+<ul>
+  <% @chord.notes.each do |note| %>
+  <li>
+    <a href="notes/<%=note.id%>"><%=note.name%></a>
+  </li>
+  <% end %>
+</ul>
+
 <p><a href="/chords/<%=@chord.id%>/edit">Edit</a> |
 <a href="/chords/<%=@chord.id%>" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Delete</a></p>
