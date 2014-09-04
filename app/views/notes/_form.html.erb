@@ -1,7 +1,9 @@
 <div class="form-group">
   <label for="note_name">Name</label>
   <select id="note_name" class="form-control" name="note[name]">
+    <% @first_time = true %>
     <% ("A".."G").each_with_index do |letter, i| %>
+
       <% if letter == @note.name %>
         <option value="<%=letter%>" selected><%=letter%></option>
       <% else %>

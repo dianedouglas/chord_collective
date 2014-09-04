@@ -20,8 +20,10 @@ class ChordsController < ApplicationController
     end
     1.upto(4) do |note_number|
       note_number = note_number.to_s
-      @note = Note.find(params[:note][note_number][:note_id])
-      @chord.notes << @note
+      if params[:note][note_number][:note_id] != "None"
+        @note = Note.find(params[:note][note_number][:note_id])
+        @chord.notes << @note
+      end
     end
   end
 

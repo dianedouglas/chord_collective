@@ -5,33 +5,81 @@
 <div class="form-group">
   <label for="note1">Note #1</label>
   <select id="note1" class="form-control note" name="note[1][note_id]" type="text">
+    <% @first_time = true %>
+
     <% Note.all.each do |note| %>
-      <option value="<%=note.id%>"><%=note.name%></option>
+      <% if @first_time == true %>
+        <% @first_time = false %>
+          <% if note == "None"%>
+            <option value="None">None</option>
+          <% else %>
+            <option value="None" selected>None</option>
+          <% end %>
       <% end %>
+
+      <option value="<%=note.id%>"><%=note.name%></option>
+    <% end %>
+    <% @first_time = false %>
   </select>
 </div>
 <div class="form-group">
   <label for="note2">Note #2</label>
   <select id="note2" class="form-control note" name="note[2][note_id]" type="text">
+    <% @first_time = true %>
+
     <% Note.all.each do |note| %>
-      <option value="<%=note.id%>"><%=note.name%></option>
+      <% if @first_time == true %>
+        <% @first_time = false %>
+          <% if note == "None"%>
+            <option value="None">None</option>
+          <% else %>
+            <option value="None" selected>None</option>
+          <% end %>
       <% end %>
+
+      <option value="<%=note.id%>"><%=note.name%></option>
+    <% end %>
+    <% @first_time = false %>
   </select>
 </div>
 <div class="form-group">
   <label for="note3">Note #3</label>
   <select id="note3" class="form-control note" name="note[3][note_id]" type="text">
+    <% @first_time = true %>
+
     <% Note.all.each do |note| %>
-      <option value="<%=note.id%>"><%=note.name%></option>
+      <% if @first_time == true %>
+        <% @first_time = false %>
+          <% if note == "None"%>
+            <option value="None">None</option>
+          <% else %>
+            <option value="None" selected>None</option>
+          <% end %>
       <% end %>
+
+      <option value="<%=note.id%>"><%=note.name%></option>
+    <% end %>
+    <% @first_time = false %>
   </select>
 </div>
 <div class="form-group">
   <label for="note4">Note #4</label>
   <select id="note4" class="form-control note" name="note[4][note_id]" type="text">
     <% Note.all.each do |note| %>
-      <option value="<%=note.id%>"><%=note.name%></option>
+      <% @first_time = true %>
+
+      <% if @first_time == true %>
+        <% @first_time = false %>
+          <% if note == "None"%>
+            <option value="None">None</option>
+          <% else %>
+            <option value="None" selected>None</option>
+          <% end %>
       <% end %>
+
+      <option value="<%=note.id%>"><%=note.name%></option>
+    <% end %>
+    <% @first_time = false %>
   </select>
 </div>
   <button class="btn btn-primary"><%=button_message%></button>
