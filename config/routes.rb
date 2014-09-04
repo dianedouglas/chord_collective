@@ -8,6 +8,7 @@ match('notes/:id/edit', {:via => :get, :to => 'notes#edit'})
 match('notes/:id', {:via => [:patch, :put], :to => 'notes#update'})
 match('notes/:id', {:via => :delete, :to => 'notes#destroy'})
 
+match('/', {:via => :get, :to => 'chords#index'})
 match('chords', {:via => :get, :to => 'chords#index'})
 match('chords/new', {:via => :get, :to => 'chords#new'})
 match('chords', {:via => :post, :to => 'chords#create'})
