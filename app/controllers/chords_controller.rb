@@ -45,6 +45,14 @@ class ChordsController < ApplicationController
     else
       render('chords/edit.html.erb')
     end
+    @chord.notes = []
+    1.upto(4) do |note_number|
+      note_number = note_number.to_s
+      if params[:note][note_number][:note_id] != "None"
+        @note = Note.find(params[:note][note_number][:note_id])
+        @chord.notes << @note
+      end
+    end
   end
 
   def destroy
