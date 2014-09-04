@@ -18,8 +18,11 @@ class ChordsController < ApplicationController
     else
       render('chords/new.html.erb')
     end
-    @note = Note.find(params[:note][:note_id])
-    @chord.notes << @note
+    1.upto(4) do |note_number|
+      note_number = note_number.to_s
+      @note = Note.find(params[:note][note_number][:note_id])
+      @chord.notes << @note
+    end
   end
 
   def show
@@ -48,5 +51,4 @@ class ChordsController < ApplicationController
     flash[:notice] = "Chord deleted."
     redirect_to('/chords')
   end
-
 end
