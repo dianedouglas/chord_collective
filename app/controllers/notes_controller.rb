@@ -13,7 +13,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(params[:note])
     if @note.save
-      flash[:notice] = "Successfully created #{@note.name}!"
+      flash[:notice] = "Successfully created #{@note.identifier}!"
       redirect_to('/notes')
     else
       render('notes/new.html.erb')
@@ -33,7 +33,7 @@ class NotesController < ApplicationController
   def update
     @note = Note.find(params[:id])
     if @note.update(params[:note])
-      flash[:notice] = "Successfully updated #{@note.name}!"
+      flash[:notice] = "Successfully updated #{@note.identifier}!"
       redirect_to('/notes')
     else
       render('notes/edit.html.erb')
