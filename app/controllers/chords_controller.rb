@@ -28,8 +28,13 @@ class ChordsController < ApplicationController
   end
 
   def show
-    @chord = Chord.find(params[:id])
-    render('chords/show.html.erb')
+    if params[:id] == "0"
+      flash[:notice] = "There are no chords created yet! Try making one instead."
+      redirect_to('/')
+    else
+      @chord = Chord.find(params[:id])
+      render('chords/show.html.erb')
+    end
   end
 
   def edit

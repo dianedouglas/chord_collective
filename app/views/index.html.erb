@@ -1,3 +1,32 @@
 <h1>Welcome to the Chord Collective!</h1>
 
+<h4>Where users can submit Notes and use them to create Chords.</h4>
+
+<br>
+
+<h5>A Note consists of:</h5>
+
+<ul>
+<li>Name (ex: Middle C)</li>
+<li>Note (ex: C)</li>
+<li>Octave (ex: the 4th octave is where middle C would be played.)</li>
+<li>Instrument (ex: Piano)</li>
+<li>Loudness: 0-127 (ex: 127 means the note is played as loud as possible. 1 would be almost silent.)</li>
+</ul>
+
+<br>
+<h5>A Chord has a name, and up to 4 notes.</h5>
+
+<br>
+
+<% random_id = 0 %>
+<% if Chord.all.length > 0 %>
+  <% random_chord_index = rand(Chord.all.length - 1)%>
+  <% random_chord = Chord.all[random_chord_index]%>
+  <% random_id = random_chord.id%>
+<% end %>
+
 <a href="/chords"><button class="btn btn-primary">View ALL the Chords!</button></a>
+<a href="/chords/new"><button class="btn btn-primary">Make a New Chord!</button></a>
+<a href="/notes/new"><button class="btn btn-primary">Make a New Note!</button></a>
+<a href="/chords/<%=random_id%>"><button class="btn btn-primary">Display a Random Chord!</button></a>
