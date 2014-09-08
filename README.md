@@ -12,7 +12,7 @@ By Diane Douglas
 
 *This information could later be used to generate sounds and colors when the user picks certain chords.*
 
-**Have fun! ----->>> [Go Play](http://chord-collection.herokuapp.com/).**
+**Have fun! ----->>> [Go Play](http://chord-collective.herokuapp.com/).**
 
 
 
