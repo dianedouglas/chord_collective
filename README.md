@@ -2,7 +2,7 @@
 ====================
 By Diane Douglas
 ---------------------
-**A rails app which allows users to create notes and create chords out of these notes.**
+***A rails app which allows users to create notes and create chords out of these notes.***
 
 *The Notes and Chords are stored in a database so that they could later be used for data visualization (for example: how many people entered minor vs major chords today coming from Oregon?)*
 
